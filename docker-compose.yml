@@ -4,6 +4,9 @@ services:
     image: node:alpine
     container_name: quiz-backend
     restart: always
+    command: sh -c "cd src && npm run start"
+    volumes:
+      - ./:/src
     networks:
       - caddy
     labels:
