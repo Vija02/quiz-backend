@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  quiz-backend:
+    image: node:alpine
+    container_name: quiz-backend
+    restart: always
+    networks:
+      - caddy
+    labels:
+      caddy: quiz-backend.michaelsalim.co.uk
+      caddy.reverse_proxy: "{{upstreams 7283}}"
+      caddy.reverse_proxy.transport: "http"
