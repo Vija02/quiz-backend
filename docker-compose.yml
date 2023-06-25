@@ -10,3 +10,7 @@ services:
       caddy: quiz-backend.michaelsalim.co.uk
       caddy.reverse_proxy: "{{upstreams 7283}}"
       caddy.reverse_proxy.transport: "http"
+
+networks:
+  caddy:
+    external: true
